@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>livestream</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.15.4/dist/video-js.min.css" integrity="sha256-XVz/xy9KgB5sEg1rQ/9cX85Ci580KgvZfyI5O9oLMag=" crossorigin="anonymous">
+
+  <style>
+    html, body { background-color: #000; }
+    #live-stream { width: 100%; height: 100vh; }
+  </style>
+  
+  <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+  <script src="https://cdn.jsdelivr.net/npm/video.js@7.15.4/dist/video.min.js" integrity="sha256-4rwArUI8OAh8dwTHYvr9DqBRCfgchNv/I/ibwjcDgo8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <video id="live-stream" class="video-js" controls autoplay muted playsinline data-setup='{ liveui: true, techOrder: [ "chromecast", "html5" ], plugins: { chromecast: {} } }'>
+    <source src="/hls/brew.m3u8" type="application/x-mpegurl">
+    <source src="/dash/brew.mpd" type="application/dash+xml">
+  </video>
+</body>
+</html>
